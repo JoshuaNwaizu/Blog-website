@@ -225,6 +225,7 @@ const logout = catchAsync(async (req: Request, res: Response) => {
       httpOnly: true,
       sameSite: 'strict',
     });
+
     res.status(200).json({ message: 'Logged out successfully', success: true });
   } catch (error: unknown) {
     console.error(error);
