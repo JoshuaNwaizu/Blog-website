@@ -1,0 +1,11 @@
+{
+    "extends": "@tsconfig/node18/tsconfig.json",
+    "compilerOptions": {
+        "outDir": "dist",
+        "noEmitOnError": false,
+        "checkJs": true,
+        "sourceMap": true
+    },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules"]
+}

@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import "tailwindcss";
+:root {
+  font-family: "Poppins", serif;
+  line-height: 1.5;
+  --black: #1c2c1c;
+  --gray-light: #e4e4e4;
+  --red: #b30000;
+  --border-radius: 18px;
+}
+
+body {
+  background-image: url("client/public/bg-noise.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #faf5ee;
+}
+.btn-delete {
+  background-color: var(--red);
+  color: #fff;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 10px 16px;
+  cursor: pointer;
+}
+img {
+  width: 100%;
+  height: auto;
+}
+.header {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  padding-top: 10px;
+  grid-template-areas: "logo button " "menu menu";
+}
+.header__logo {
+  grid-area: logo;
+  font-weight: 800;
+  font-size: 25px;
+  text-decoration: none;
+}
+.header__logo:hover {
+  text-decoration: underline;
+}
+.header__nav {
+  grid-area: menu;
+  display: flex;
+  justify-content: center;
+}
+
+.header__button {
+  display: flex;
+  justify-content: end;
+  grid-area: button;
+}
