@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { useState } from "react";
 import { API } from "../../main-page/Home";
 
@@ -77,6 +77,9 @@ const SignInForm = () => {
           />
         </div>
       </form>
+      <Link to={"/admin/sign-up"}>
+        <p className="mt-5">No account? Signup instead</p>
+      </Link>
     </div>
   );
 };

@@ -1,6 +1,8 @@
+import { Link, NavigateFunction, useNavigate } from "react-router";
 import { API } from "../../main-page/Home";
 
 const RegisterForm = () => {
+  const navigate: NavigateFunction = useNavigate();
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -16,8 +18,7 @@ const RegisterForm = () => {
       });
 
       if (response.ok) {
-        const data = await response.json();
-        console.log("Resonse from the server", data);
+        navigate("/admin/sign-in");
       } else {
         console.error("Failed to register form");
       }
@@ -68,6 +69,9 @@ const RegisterForm = () => {
           />
         </div>
       </form>
+      <Link to={"/admin/sign-in"}>
+        <p className="mt-5 text-blue-500">Have an account? Login instead</p>
+      </Link>
     </div>
   );
 };

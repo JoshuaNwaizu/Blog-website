@@ -12,6 +12,7 @@ import {
   editPost,
   deletePost,
   logout,
+  getUsers,
 } from '../controllers/adminController.js';
 
 const router = express.Router();
@@ -23,5 +24,6 @@ router.route('/edit-post/:id').patch(protect, editPost);
 router.route('/dashboard').get(protect, dashboard);
 router.route('/delete-post/:id').delete(protect, deletePost);
 router.route('/logout').get(protect, logout);
+router.route('/users').get(protect, getUsers);
 
 export default router;

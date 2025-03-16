@@ -24,7 +24,7 @@ const Header = () => {
         <div>
           <button
             aria-expanded="false"
-            className="flex items-center gap-1.5 rounded-2xl bg-[#000] px-[2rem] py-[1rem] text-white transition-all duration-150 hover:border-[1px] hover:border-black hover:bg-transparent hover:text-black"
+            className="hidden items-center gap-1.5 rounded-2xl bg-[#000] px-[2rem] py-[1rem] text-white transition-all duration-150 hover:border-[1px] hover:border-black hover:bg-transparent hover:text-black"
           >
             <span>Search</span>
             <BiSearch />

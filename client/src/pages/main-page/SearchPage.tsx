@@ -55,18 +55,18 @@ const SearchPage = () => {
   return (
     <div className="">
       <div>
-        <h1 className="pb-5 text-center text-[3rem] font-bold">
+        <h1 className="pb-5 text-center text-[2.2rem] font-bold md:text-[3rem]">
           Search results for: '{searchTerm}'
         </h1>
         <div>
           {searchResults && searchResults.length > 0 ? (
             searchResults.map((post: Post) => (
               <div key={post._id} className="py-1 text-[1.2rem]">
-                <p className="flex justify-between text-[1.2rem]">
+                <p className="flex justify-between text-[1rem] md:text-[1.2rem]">
                   <Link to={`/post/${post._id}`}>
                     <span className="hover:underline">{post.title}</span>
                   </Link>
-                  <span className="inline-block text-gray-500">
+                  <span className="inline-block text-gray-500 max-sm:hidden">
                     {formatDate(post.createdAt)}
                   </span>
                 </p>

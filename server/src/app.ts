@@ -43,8 +43,8 @@ app.use((err: any, req: Request, res: Response, next: Function) => {
 connectDB();
 
 app.set('view engine', 'ejs');
-app.use('', main);
-app.use('', admin);
+app.use('/v1/api', main);
+app.use('/v1/api', admin);
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

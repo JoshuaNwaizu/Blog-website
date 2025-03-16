@@ -233,6 +233,20 @@ const logout = catchAsync(async (req: Request, res: Response) => {
   }
 });
 
+const getUsers = catchAsync(async (req: Request, res: Response) => {
+  try {
+    const users = req.user;
+    if (!users) {
+      res.status(404).json({ message: 'User not found' });
+    }
+    // const users = await User.find().select('-password');
+    res.status(200).json({ message: 'User fetched successfully', users });
+  } catch (error: unknown) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
 export {
   login,
   register,
@@ -243,4 +257,5 @@ export {
   editPost,
   deletePost,
   logout,
+  getUsers,
 };

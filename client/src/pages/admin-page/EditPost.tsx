@@ -1,17 +1,17 @@
 import { Link, useNavigate, useParams } from "react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { className } from "./Dashboard";
 
 import { BiArrowBack } from "react-icons/bi";
 import React from "react";
-import { API } from "../main-page/Home";
+import { API, Post } from "../main-page/Home";
 
 const EditPost = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isDeleting, setIsDeleting] = useState<boolean>(false);
+  const [post, setPost] = useState<Post | null>(null);
   const navigate = useNavigate();
   const { id } = useParams();
-  console.log("Params ID:", id);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -19,8 +19,6 @@ const EditPost = () => {
     const title = formData.get("title") as string;
     const body = formData.get("body") as string;
 
-    console.log("title:", title);
-    console.log("body:", body);
     const token = localStorage.getItem("token");
     try {
       setIsLoading(true);
@@ -39,11 +37,31 @@ const EditPost = () => {
       } else {
         console.error("Failed to add post");
       }
-      console.log(data);
     } catch (error: unknown) {
       console.error(error);
     }
   };
+  useEffect(() => {
+    const getPost = async () => {
+      const token = localStorage.getItem("token");
+      try {
+        const response = await fetch(`${API}/post/${id}`, {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        const data = await response.json();
+
+        if (data) {
+          setPost(data.posts);
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getPost();
+  }, [id]);
   const handleDelete = async () => {
     const token = localStorage.getItem("token");
     try {
@@ -94,6 +112,7 @@ const EditPost = () => {
               name="title"
               id="title"
               required
+              defaultValue={post?.title}
               placeholder="Post title"
               className="border-2 border-gray-400 bg-transparent px-4 py-2 outline-none"
             />
@@ -109,6 +128,7 @@ const EditPost = () => {
               id="body"
               rows={10}
               cols={30}
+              defaultValue={post?.body}
               className="border-2 border-gray-400 bg-transparent px-4 py-2 outline-none"
             ></textarea>
           </div>

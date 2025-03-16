@@ -38,13 +38,13 @@ const Search = () => {
     <div
       className={`relative ${openSearch ? "translate-y-0" : "translate-y-[-100px]"} bg-black px-0 py-[2.5rem] transition-all duration-200`}
     >
-      <div>
+      <div className="">
         <form
           action="search"
           role="search"
           name="search"
           method="POST"
-          className="mx-[4rem] py-3"
+          className="mx-[4rem] py-3 max-sm:mx-0 max-sm:flex max-sm:items-center max-sm:justify-center"
           onSubmit={handleSearch}
         >
           <input

@@ -11,6 +11,7 @@ import Dashboard from "./pages/admin-page/Dashboard";
 
 import AddPost from "./pages/admin-page/AddPost";
 import EditPost from "./pages/admin-page/EditPost";
+import SignUp from "./pages/admin-page/SignUp";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,7 @@ const router = createBrowserRouter([
     element: <AdminLayout />,
     children: [
       { path: "sign-in", element: <SignIn /> },
+      { path: "sign-up", element: <SignUp /> },
       { path: "dashboard", element: <Dashboard /> },
       { path: "add-post", element: <AddPost /> },
       { path: "edit-post/:id", element: <EditPost /> },

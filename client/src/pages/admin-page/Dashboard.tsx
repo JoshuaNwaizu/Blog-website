@@ -30,7 +30,6 @@ const Dashboard = () => {
         console.log("No data");
       }
       setDashboardData(data);
-      console.log(data);
     } catch (err) {
       console.log(err);
     }
@@ -67,7 +66,6 @@ const Dashboard = () => {
       getDashboard();
     }
   }, []);
-  if (!dashboardData) return <div>Loading...</div>;
 
   return (
     <div>
@@ -79,35 +77,39 @@ const Dashboard = () => {
           </button>
         </Link>
       </div>
-      <ul className="mt-7 flex list-none flex-col gap-6 p-0">
-        {dashboardData?.posts.map((post) => (
-          <div key={post._id}>
-            <li className="flex justify-between text-[1.2rem]">
-              <Link to={`/post/${post._id}`}>
-                <p className="flex gap-2 hover:underline">
-                  <span>{post.title} </span>
-                  <span>
-                    <CgLink />
-                  </span>
-                </p>{" "}
-              </Link>
-              <div className="flex gap-2">
-                <Link to={`/admin/edit-post/${post._id}`}>
-                  <button className={`${className} bg-[#000]`}>Edit</button>
+      {!dashboardData ? (
+        <div className="mt-8 font-bold">Loading...</div>
+      ) : (
+        <ul className="mt-7 flex list-none flex-col gap-6 p-0">
+          {dashboardData?.posts.map((post) => (
+            <div key={post._id}>
+              <li className="flex justify-between sm:text-[1rem] md:text-[1.2rem]">
+                <Link to={`/post/${post._id}`}>
+                  <p className="flex hover:underline md:gap-2">
+                    <span className="">{post.title} </span>
+                    <span className="hidden">
+                      <CgLink />
+                    </span>
+                  </p>{" "}
                 </Link>
-                <button
-                  className={`${className} ${isDeleting && deletingPostId === post._id ? "bg-gray-500" : "bg-red-500"} `}
-                  onClick={() => handleDelete(post._id)}
-                >
-                  {isDeleting && deletingPostId === post._id
-                    ? "Deleting"
-                    : "Delete"}
-                </button>
-              </div>
-            </li>
-          </div>
-        ))}
-      </ul>
+                <div className="flex gap-2">
+                  <Link to={`/admin/edit-post/${post._id}`}>
+                    <button className={`${className} bg-[#000]`}>Edit</button>
+                  </Link>
+                  <button
+                    className={`${className} ${isDeleting && deletingPostId === post._id ? "bg-gray-500" : "bg-red-500"} max-sm:hidden`}
+                    onClick={() => handleDelete(post._id)}
+                  >
+                    {isDeleting && deletingPostId === post._id
+                      ? "Deleting"
+                      : "Delete"}
+                  </button>
+                </div>
+              </li>
+            </div>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };

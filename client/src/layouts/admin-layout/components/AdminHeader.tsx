@@ -28,8 +28,8 @@ const AdminHeader = () => {
   };
   return (
     <div>
-      <header className="flex items-center justify-between py-4">
-        <span className="text-2xl font-extrabold no-underline hover:underline">
+      <header className="flex items-center justify-between py-4 max-sm:flex-col max-sm:gap-5">
+        <span className="text-2xl font-extrabold no-underline hover:underline max-sm:text-4xl">
           Admin Panel
         </span>
         <nav className="flex justify-center gap-4">
@@ -43,16 +43,16 @@ const AdminHeader = () => {
               </p>
             </Link>
           ))}
+          <div>
+            <button
+              onClick={handleLogout}
+              className="flex items-center gap-1.5 rounded-2xl bg-[#000] px-[1.5rem] py-[.8rem] text-white"
+            >
+              <span>Logout</span>
+              <BiLogOut />
+            </button>
+          </div>
         </nav>
-        <div>
-          <button
-            onClick={handleLogout}
-            className="flex items-center gap-1.5 rounded-2xl bg-[#000] px-[2rem] py-[1rem] text-white transition-all duration-150 hover:border-[1px] hover:border-black hover:bg-transparent hover:text-black"
-          >
-            <span>Logout</span>
-            <BiLogOut />
-          </button>
-        </div>
       </header>
     </div>
   );
