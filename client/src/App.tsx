@@ -16,6 +16,7 @@ import SignUp from "./pages/admin-page/SignUp";
 const router = createBrowserRouter([
   {
     element: <MainLayout />,
+    path: "/home",
     children: [
       { path: "/home", element: <Home /> },
       { path: "/about", element: <About /> },
