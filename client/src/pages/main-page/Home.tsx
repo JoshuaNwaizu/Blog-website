@@ -12,7 +12,8 @@ export interface IUser {
   userName: string;
 }
 
-export const API = "http://localhost:5000/v1/api";
+export const API = import.meta.env.VITE_BASE_URL as string;
+
 export const formatDate = (dateString: string) => {
   const date = new Date(dateString);
   return date.toLocaleDateString("en-US", {

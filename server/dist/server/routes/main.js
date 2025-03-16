@@ -1,15 +1,9 @@
 import express from 'express';
-import {
-  getAllPosts,
-  getPostById,
-  searchPosts,
-} from '../controllers/mainController.js';
-
+import { getAllPosts, getPostById, searchPosts, } from '../controllers/mainController.js';
 const router = express.Router();
 router.get('/post', getAllPosts);
 router.get('/post/:id', getPostById);
 router.post('/search', searchPosts);
-
 // search term
 // const insertPostData = () => {
 //   Post.insertMany([
@@ -31,3 +25,4 @@ router.post('/search', searchPosts);
 // };
 // insertPostData();
 export default router;
+//# sourceMappingURL=main.js.map
