@@ -10,8 +10,8 @@ const Header = () => {
           NoBlog
         </span>
         <nav className="flex justify-center gap-4">
-          {headerItems.map((item) => (
-            <Link to={`/${item}`}>
+          {headerItems.map((item, i) => (
+            <Link to={`/${item === "home" ? "" : item}`} key={i}>
               <p
                 key={item}
                 className="p-[10px] capitalize hover:underline active:text-red-300"

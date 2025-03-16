@@ -16,9 +16,9 @@ import SignUp from "./pages/admin-page/SignUp";
 const router = createBrowserRouter([
   {
     element: <MainLayout />,
-    path: "/home",
+    path: "/",
     children: [
-      { path: "/home", element: <Home /> },
+      { path: "/", element: <Home /> },
       { path: "/about", element: <About /> },
       { path: "/contact", element: <Contact /> },
       { path: "/post/:id", element: <PostsPage /> },
