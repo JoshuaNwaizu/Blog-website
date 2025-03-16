@@ -79,7 +79,7 @@ const AddPost = () => {
           <input
             type="submit"
             value={isLoading ? "Saving..." : "Save"}
-            className={`${className} bg-[#000]`}
+            className={`${className} ${isLoading ? "bg-gray-500" : "bg-[#000]"} `}
           />
         </form>
       </div>

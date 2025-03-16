@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { API, Post } from "./Home";
+import { API, formatDate, Post } from "./Home";
 import { useParams } from "react-router";
 
 const PostsPage = () => {
@@ -36,6 +36,10 @@ const PostsPage = () => {
         <h1 className="text-[2rem] font-bold">{postData?.title}</h1>
         <article className="text-[1.2rem]">{postData?.body}</article>
       </div>
+      <hr className="md:hidden" />
+      <p className="text-gray-500 md:hidden">
+        {formatDate(postData.createdAt)}
+      </p>
     </div>
   );
 };

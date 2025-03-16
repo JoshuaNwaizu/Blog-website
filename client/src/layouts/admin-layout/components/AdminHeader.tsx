@@ -46,7 +46,7 @@ const AdminHeader = () => {
           <div>
             <button
               onClick={handleLogout}
-              className="flex items-center gap-1.5 rounded-2xl bg-[#000] px-[1.5rem] py-[.8rem] text-white"
+              className="flex items-center gap-1.5 rounded-2xl bg-[#000] px-[1.5rem] py-[.8rem] text-white max-sm:px-4"
             >
               <span>Logout</span>
               <BiLogOut />

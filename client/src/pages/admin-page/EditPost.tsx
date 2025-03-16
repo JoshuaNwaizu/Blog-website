@@ -92,8 +92,10 @@ const EditPost = () => {
         <BiArrowBack className="text-4xl font-bold" />
       </Link>
       <div className="mt-7 flex list-none flex-col gap-6 p-0">
-        <div className="flex justify-between">
-          <h1 className="text-4xl font-bold">View / Edit Post</h1>
+        <div className="flex items-center justify-between">
+          <h1 className="text-4xl font-bold max-sm:text-3xl">
+            View / Edit Post
+          </h1>
           <button
             className={`${className} ${isDeleting ? "bg-gray-500" : "bg-red-500"} `}
             onClick={handleDelete}
@@ -136,6 +138,7 @@ const EditPost = () => {
           <input
             type="submit"
             value={`${isLoading ? "Updating..." : "Update"}`}
+            disabled={isLoading}
             className={`${className} bg-[#000] ${isLoading && "bg-gray-500"}`}
           />
         </form>

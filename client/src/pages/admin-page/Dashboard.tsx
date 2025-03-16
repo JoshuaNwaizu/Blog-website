@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router";
 import { API, Post } from "../main-page/Home";
 import { useEffect, useState } from "react";
 import { CgLink } from "react-icons/cg";
+import { CiEdit } from "react-icons/ci";
 
 interface Dashboard {
   message: string;
@@ -72,7 +73,7 @@ const Dashboard = () => {
       <div className="flex items-center justify-between">
         <h2 className="text-4xl font-bold">Posts</h2>
         <Link to={"/admin/add-post"}>
-          <button className="flex items-center gap-1.5 rounded-2xl bg-[#000] px-[2rem] py-[1rem] text-white transition-all duration-150 hover:border-[1px] hover:border-black hover:bg-transparent hover:text-black">
+          <button className="flex items-center gap-1.5 rounded-2xl bg-[#000000e3] px-[2rem] py-[1rem] text-white transition-all duration-150 hover:border-[1px] hover:border-black hover:bg-transparent hover:text-black max-sm:px-[1.3rem]">
             Add new
           </button>
         </Link>
@@ -94,7 +95,10 @@ const Dashboard = () => {
                 </Link>
                 <div className="flex gap-2">
                   <Link to={`/admin/edit-post/${post._id}`}>
-                    <button className={`${className} bg-[#000]`}>Edit</button>
+                    <button className={`${className} bg-[#0000009a]`}>
+                      <span>Edit</span>
+                      <CiEdit className="font-bold" />
+                    </button>
                   </Link>
                   <button
                     className={`${className} ${isDeleting && deletingPostId === post._id ? "bg-gray-500" : "bg-red-500"} max-sm:hidden`}
@@ -102,7 +106,7 @@ const Dashboard = () => {
                   >
                     {isDeleting && deletingPostId === post._id
                       ? "Deleting"
-                      : "Delete"}
+                      : "Del"}
                   </button>
                 </div>
               </li>

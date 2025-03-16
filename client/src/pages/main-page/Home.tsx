@@ -10,7 +10,6 @@ export interface Post {
 export interface IUser {
   _id: string;
   userName: string;
-  // add other properties as needed
 }
 
 export const API = "http://localhost:5000/v1/api";
@@ -51,7 +50,7 @@ const Home = () => {
       const response = await fetch(`${API}/users`, {
         method: "GET",
         headers: {
-          Authorization: `Bearer ${token}`, // Include the token in the request
+          Authorization: `Bearer ${token}`,
         },
       });
       const data = await response.json();
@@ -75,20 +74,20 @@ const Home = () => {
           Hi, {user ? user.userName : "Friend"}
         </h1>
         {!user ? (
-          <p className="flex justify-center gap-1">
-            <Link to={"/admin/sign-up"} className="font-bold underline">
+          <p className="text-2xl">
+            <Link to={"/admin/sign-up"} className="pr-2 font-bold underline">
               Sign-up
             </Link>
             or
-            <Link to={"/admin/sign-in"} className="font-bold underline">
+            <Link to={"/admin/sign-in"} className="px-2 font-bold underline">
               Login
             </Link>
             to create a blog post
           </p>
         ) : (
-          <p className="flex items-center justify-center gap-1">
+          <p className="text-2xl">
             <span>Create a blog post in</span>
-            <Link to={"/admin/dashboard"} className="font-bold underline">
+            <Link to={"/admin/dashboard"} className="pl-2 font-bold underline">
               Dashboard
             </Link>
           </p>
