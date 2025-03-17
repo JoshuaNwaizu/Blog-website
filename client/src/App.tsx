@@ -8,7 +8,6 @@ import AdminLayout from "./layouts/admin-layout/AdminLayout";
 import SearchPage from "./pages/main-page/SearchPage";
 import SignIn from "./pages/admin-page/SignIn";
 import Dashboard from "./pages/admin-page/Dashboard";
-
 import AddPost from "./pages/admin-page/AddPost";
 import EditPost from "./pages/admin-page/EditPost";
 import SignUp from "./pages/admin-page/SignUp";

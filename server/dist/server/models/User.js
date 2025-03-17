@@ -1,6 +1,8 @@
-import mongoose from 'mongoose';
-const Schema = mongoose.Schema;
-const UserSchema = new Schema({
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var mongoose_1 = require("mongoose");
+var Schema = mongoose_1.default.Schema;
+var UserSchema = new Schema({
     userName: {
         type: String,
         required: true,
@@ -11,5 +13,4 @@ const UserSchema = new Schema({
         required: true,
     },
 });
-export default mongoose.model('User', UserSchema);
-//# sourceMappingURL=User.js.map
+exports.default = mongoose_1.default.model('User', UserSchema);

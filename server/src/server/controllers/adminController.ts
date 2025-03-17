@@ -1,9 +1,10 @@
 import catchAsync from '../utils/catchAsync.js';
 import { Request, Response, NextFunction } from 'express';
 import User, { IUser } from '../models/User.js';
-import bcrypt from 'bcrypt';
-import jwt from 'jsonwebtoken';
-import dotenv from 'dotenv';
+
+import * as dotenv from 'dotenv';
+import * as bcrypt from 'bcrypt';
+import * as jwt from 'jsonwebtoken';
 import Post from '../models/Post.js';
 
 dotenv.config();

@@ -1,6 +1,4 @@
-import express from 'express';
-import { Request, Response } from 'express';
-import Post from '../models/Post.js';
+import * as express from 'express';
 
 import {
   protect,

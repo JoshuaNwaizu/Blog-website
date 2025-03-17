@@ -1,7 +1,8 @@
-const catchAsync = (fn) => {
-    return (req, res, next) => {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var catchAsync = function (fn) {
+    return function (req, res, next) {
         fn(req, res, next).catch(next);
     };
 };
-export default catchAsync;
-//# sourceMappingURL=catchAsync.js.map
+exports.default = catchAsync;

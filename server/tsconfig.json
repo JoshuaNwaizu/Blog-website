@@ -1,11 +1,24 @@
+// {
+//     "extends": "@tsconfig/node18/tsconfig.json",
+//     "compilerOptions": {
+//         "outDir": "dist",
+//         "noEmitOnError": false,
+//         "checkJs": true,
+//         "sourceMap": true
+//     },
+//     "include": ["src/**/*"],
+//     "exclude": ["node_modules"]
+// }
 {
     "extends": "@tsconfig/node18/tsconfig.json",
     "compilerOptions": {
-        "outDir": "dist",
-        "noEmitOnError": false,
-        "checkJs": true,
-        "sourceMap": true
+      "outDir": "dist",
+      "noEmitOnError": false,
+      "checkJs": true,
+      "sourceMap": true,
+      "esModuleInterop": true,  // Add this line
+      "allowSyntheticDefaultImports": true  // This line is also recommended
     },
     "include": ["src/**/*"],
     "exclude": ["node_modules"]
-}
+  }
