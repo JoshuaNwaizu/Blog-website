@@ -14,8 +14,11 @@
     "compilerOptions": {
       "outDir": "dist",
       "noEmitOnError": false,
-      "checkJs": true,
+      "checkJs": false,
+      "rootDir": "src",
+      "strict": true,
       "sourceMap": true,
+      "moduleResolution": "node",
       "esModuleInterop": true,  // Add this line
       "allowSyntheticDefaultImports": true  // This line is also recommended
     },
