@@ -1,8 +1,6 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var mongoose_1 = require("mongoose");
-var Schema = mongoose_1.default.Schema;
-var PostSchema = new Schema({
+import mongoose from 'mongoose';
+const Schema = mongoose.Schema;
+const PostSchema = new Schema({
     title: {
         type: String,
         required: true,
@@ -20,4 +18,5 @@ var PostSchema = new Schema({
         default: Date.now,
     },
 });
-exports.default = mongoose_1.default.model('Post', PostSchema);
+export default mongoose.model('Post', PostSchema);
+//# sourceMappingURL=Post.js.map

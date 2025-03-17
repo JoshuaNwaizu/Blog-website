@@ -1,8 +1,6 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var mongoose_1 = require("mongoose");
-var Schema = mongoose_1.default.Schema;
-var UserSchema = new Schema({
+import mongoose from 'mongoose';
+const Schema = mongoose.Schema;
+const UserSchema = new Schema({
     userName: {
         type: String,
         required: true,
@@ -13,4 +11,5 @@ var UserSchema = new Schema({
         required: true,
     },
 });
-exports.default = mongoose_1.default.model('User', UserSchema);
+export default mongoose.model('User', UserSchema);
+//# sourceMappingURL=User.js.map

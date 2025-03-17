@@ -1,14 +1,13 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var express = require("express");
-var adminController_js_1 = require("../controllers/adminController.js");
-var router = express.Router();
-router.route('/admin').post(adminController_js_1.login);
-router.route('/register').post(adminController_js_1.register);
-router.route('/add-post').get(adminController_js_1.protect, adminController_js_1.addPost).post(adminController_js_1.protect, adminController_js_1.createPost);
-router.route('/edit-post/:id').patch(adminController_js_1.protect, adminController_js_1.editPost);
-router.route('/dashboard').get(adminController_js_1.protect, adminController_js_1.dashboard);
-router.route('/delete-post/:id').delete(adminController_js_1.protect, adminController_js_1.deletePost);
-router.route('/logout').get(adminController_js_1.protect, adminController_js_1.logout);
-router.route('/users').get(adminController_js_1.protect, adminController_js_1.getUsers);
-exports.default = router;
+import * as express from 'express';
+import { protect, dashboard, login, register, addPost, createPost, editPost, deletePost, logout, getUsers, } from '../controllers/adminController.js';
+const router = express.Router();
+router.route('/admin').post(login);
+router.route('/register').post(register);
+router.route('/add-post').get(protect, addPost).post(protect, createPost);
+router.route('/edit-post/:id').patch(protect, editPost);
+router.route('/dashboard').get(protect, dashboard);
+router.route('/delete-post/:id').delete(protect, deletePost);
+router.route('/logout').get(protect, logout);
+router.route('/users').get(protect, getUsers);
+export default router;
+//# sourceMappingURL=admin.js.map

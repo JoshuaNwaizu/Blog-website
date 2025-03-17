@@ -1,11 +1,9 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var express = require("express");
-var mainController_js_1 = require("../controllers/mainController.js");
-var router = express.Router();
-router.get('/post', mainController_js_1.getAllPosts);
-router.get('/post/:id', mainController_js_1.getPostById);
-router.post('/search', mainController_js_1.searchPosts);
+import * as express from 'express';
+import { getAllPosts, getPostById, searchPosts, } from '../controllers/mainController.js';
+const router = express.Router();
+router.get('/post', getAllPosts);
+router.get('/post/:id', getPostById);
+router.post('/search', searchPosts);
 // search term
 // const insertPostData = () => {
 //   Post.insertMany([
@@ -26,4 +24,5 @@ router.post('/search', mainController_js_1.searchPosts);
 //   ]);
 // };
 // insertPostData();
-exports.default = router;
+export default router;
+//# sourceMappingURL=main.js.map
