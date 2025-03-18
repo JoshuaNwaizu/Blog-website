@@ -1,4 +1,4 @@
-import * as express from 'express';
+import express from 'express';
 import { protect, dashboard, login, register, addPost, createPost, editPost, deletePost, logout, getUsers, } from '../controllers/adminController.js';
 const router = express.Router();
 router.route('/admin').post(login);

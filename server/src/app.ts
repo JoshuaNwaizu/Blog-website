@@ -17,8 +17,9 @@ const app: Express = express();
 const PORT: number = process.env.PORT ? Number(process.env.PORT) : 5000;
 
 const corsOptions = {
-  origin: 'http://localhost:5173',
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  origin: 'https://blog-website-168p.vercel.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
 };
 app.get('/', (req: Request, res: Response) => {

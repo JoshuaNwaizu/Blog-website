@@ -1,4 +1,4 @@
-import * as express from 'express';
+import express from 'express';
 import { getAllPosts, getPostById, searchPosts, } from '../controllers/mainController.js';
 const router = express.Router();
 router.get('/post', getAllPosts);
