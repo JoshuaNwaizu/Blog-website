@@ -2,7 +2,7 @@ import catchAsync from '../utils/catchAsync.js';
 import User from '../models/User.js';
 import * as dotenv from 'dotenv';
 import * as bcrypt from 'bcrypt';
-import * as jwt from 'jsonwebtoken';
+import jwt from 'jsonwebtoken';
 import Post from '../models/Post.js';
 dotenv.config();
 const jwtSecret = process.env.JWT_SECRET;

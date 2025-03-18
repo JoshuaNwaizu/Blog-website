@@ -34,7 +34,7 @@ const AdminHeader = () => {
         </span>
         <nav className="flex justify-center gap-4">
           {headerItems.map((item) => (
-            <Link to={`/${item}`}>
+            <Link to={`/${item === "home" ? "" : item}`}>
               <p
                 key={item}
                 className="p-[10px] capitalize hover:underline active:text-red-300"

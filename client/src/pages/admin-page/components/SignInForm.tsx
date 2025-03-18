@@ -3,6 +3,7 @@ import { useState } from "react";
 import { API } from "../../main-page/Home";
 
 const SignInForm = () => {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isError, setIsError] = useState<boolean>(false);
   const navigate = useNavigate();
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -22,6 +23,9 @@ const SignInForm = () => {
 
       if (response.ok) {
         const data = await response.json();
+        if (data) {
+          setIsLoading(false);
+        }
         console.log("Data: ", data);
         localStorage.setItem("token", data.token);
         navigate("/admin/dashboard");
@@ -73,7 +77,7 @@ const SignInForm = () => {
           <input
             type="submit"
             value={`${isError ? "Failed" : "Sign in"} `}
-            className="flex items-center gap-1.5 rounded-2xl bg-[#000] px-[2rem] py-[1rem] text-white transition-all duration-150 hover:border-[1px] hover:border-black hover:bg-transparent hover:text-black"
+            className={`flex items-center ${isLoading ? "bg-gray-500" : "bg-[#000]"} gap-1.5 rounded-2xl px-[2rem] py-[1rem] text-white transition-all duration-150 hover:border-[1px] hover:border-black hover:bg-transparent hover:text-black`}
           />
         </div>
       </form>
