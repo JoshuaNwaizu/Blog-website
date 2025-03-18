@@ -8,8 +8,8 @@
       "rootDir": "src",
       "strict": true,
       "sourceMap": true,
-      "esModuleInterop": true,  // Add this line
-      "allowSyntheticDefaultImports": true  // This line is also recommended
+      "esModuleInterop": true,  
+      "allowSyntheticDefaultImports": true
     },
     "include": ["src/**/*"],
     "exclude": ["node_modules"]
